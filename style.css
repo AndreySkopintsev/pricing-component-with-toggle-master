@@ -1,0 +1,170 @@
+@import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@700&display=swap');
+
+*{
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+    font-family: 'Montserrat', sans-serif;
+    font-size: 15px;
+}
+
+.container{
+    background-color: hsl(240, 78%, 98%);
+    background-image: url('./images/bg-top.svg');
+    background-position-x: 150px;
+    background-position-y: -50px;
+    background-repeat: no-repeat;
+}
+
+.priceSwitch{
+    min-height: 150px;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-around;
+    align-items: center;
+    color: hsl(234, 14%, 74%);
+}
+
+.switch{
+    display: flex;
+    min-width: 250px;
+    justify-content: space-between;
+    align-items: center;
+}
+
+input[type="checkbox"]{
+    cursor: pointer;
+    position: relative;
+    -webkit-appearance: none;
+    height: 25px;
+    width: 45px;
+    border-radius: 20px;
+    background: linear-gradient(to right,hsl(236, 72%, 79%),hsl(237, 63%, 64%));
+}
+
+input[type="checkbox"]::before{
+    position: absolute;
+    top: 3px;
+    left: 5px;
+    content: '';
+    height: 19px;
+    width: 19px;
+    border-radius: 50%;
+    background: hsl(240, 46%, 100%);
+    transition: ease-in-out 0.2s;
+}
+
+input:checked[type="checkbox"]::before{
+    left: 21px;
+}
+
+input:checked[type="checkbox"]{
+    background: hsl(234, 14%, 74%);
+}
+
+h1{
+    font-size: 28px;
+    color: hsl(233, 13%, 49%);
+}
+
+section{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+.priceBox{
+    background: hsl(240, 46%, 100%);
+    box-shadow: 0 5px 15px hsl(234, 14%, 74%);
+    margin: 15px 0;
+    border-radius: 10px;
+    min-width: 300px;
+    min-height: 400px;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-around;
+    align-items: center;
+    color: hsl(233, 13%, 49%);
+}
+
+.selectedBox{
+    background: linear-gradient(hsl(236, 72%, 79%),hsl(237, 63%, 64%));
+    color: hsl(240, 46%, 100%);
+}
+
+.selectedBox .priceSpan{
+    color: hsl(240, 46%, 100%);
+}
+
+.selectedBox button{
+    background: hsl(240, 46%, 100%);
+    color: hsl(232, 13%, 33%);
+}
+
+.selectedBox button:hover{
+    color: hsl(240, 46%, 100%);
+    border:1px solid hsl(240, 46%, 100%);
+}
+
+.selectedBox ul li{
+    border-color: rgb(255, 255, 255);
+}
+
+.priceSpan{
+    font-size: 40px;
+    color: hsl(232, 13%, 33%);
+}
+
+ul{
+    border-top: 0.5px solid hsl(240, 78%, 98%);
+    min-height: 150px;
+    min-width: 250px;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-around;
+    align-items: center;
+}
+
+li{
+    list-style-type: none;
+    min-width: 250px;
+    text-align: center;
+    padding: 20px;
+    border-bottom: 0.5px solid hsl(240, 78%, 98%);
+}
+
+button{
+    width: 240px;
+    height: 50px;
+    border: none;
+    border-radius: 5px;
+    color: hsl(240, 46%, 100%);
+    background: linear-gradient(to right,hsl(236, 72%, 79%),hsl(237, 63%, 64%));
+}
+
+button:hover{
+    cursor: pointer;
+    background: none;
+    border: 1px solid hsl(232, 13%, 33%);
+    color: hsl(232, 13%, 33%);
+}
+
+@media (min-width:768px){
+    .container{
+        background-color: hsl(240, 78%, 98%);
+        background-image: url('./images/bg-top.svg'),url('./images/bg-bottom.svg');
+        background-position-x: 900px,0;
+        background-position-y: 0,300px;
+        background-size: 400px,300px;
+        background-repeat: no-repeat;
+    }
+
+    section{
+        flex-direction: row;
+    }
+
+    .selectedBox{
+        transform: scale(1.05);
+    }
+}
